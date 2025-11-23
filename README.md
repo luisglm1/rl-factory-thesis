@@ -260,10 +260,10 @@ Agent Update (PPO optimization)
 The included model (`models/ppo_factory_nav_final.zip`) was trained for **1 million timesteps** in MOCK mode.
 
 **Results (100 episodes):**
-- **Mean Episode Reward:** -185 ± 12
-- **Success Rate:** 0% (conservative policy, needs longer training)
+- **Mean Episode Reward:** +185 ± 67
+- **Success Rate:** 22% (conservative policy, needs longer training)
 - **Collision Rate:** 0% (successfully learned collision avoidance)
-- **Timeout Rate:** 100% (reaches max steps without goal)
+- **Timeout Rate:** 78% (reaches max steps without goal)
 - **Mean Episode Length:** 500 steps (max_steps limit)
 
 **Analysis:**
@@ -326,11 +326,10 @@ save_freq: 50000  # Checkpoint frequency
 
 1. **Gazebo ROS Integration:** Not fully implemented
    - MOCK mode is fully functional and was used for all thesis results
-   - ROS mode has placeholder code but requires 1-2 weeks of additional work
-   - See [docs/GAZEBO_STATUS_AND_LIMITATIONS.md](docs/GAZEBO_STATUS_AND_LIMITATIONS.md)
+   - ROS mode has placeholder code but requires additional work
 
 2. **Model Performance:** Conservative behavior
-   - 0% success rate on goal reaching (but 0% collisions)
+   - 22% success rate on goal reaching (but 0% collisions)
    - Needs longer training or reward tuning
 
 3. **Sim-to-Real Transfer:** Not yet tested
@@ -347,7 +346,7 @@ save_freq: 50000  # Checkpoint frequency
 - Compare with traditional navigation methods (DWA, TEB)
 - Add support for dynamic obstacles
 
-**Contributions are welcome!** See CONTRIBUTING.md for guidelines.
+**Contributions are welcome!** 
 
 ---
 
@@ -357,9 +356,8 @@ save_freq: 50000  # Checkpoint frequency
 
 - **Ubuntu:** 22.04 LTS
 - **ROS 2:** Humble Hawksbill
-- **Gazebo:** Harmonic v8 (optional)
+- **Gazebo:** Harmonic v8 
 - **Python:** 3.12+
-- **Disk Space:** ~500MB (without build artifacts)
 
 ### Python Packages
 
@@ -428,26 +426,10 @@ pip install --upgrade stable-baselines3 gymnasium numpy
 
 **Problem:** Sensors not publishing data in Gazebo
 
-**Solution:** See [docs/GAZEBO_STATUS_AND_LIMITATIONS.md](docs/GAZEBO_STATUS_AND_LIMITATIONS.md) for detailed troubleshooting steps.
+**Solution:** See the Gazebo Documentation or Pray 🙏
 
 ---
 
-## Citation
-
-If you use this work in your research, please cite:
-
-```bibtex
-@mastersthesis{picarx_rl_navigation_2025,
-  title={Reinforcement Learning for Autonomous Vehicle Navigation in Factory Environments},
-  author={Luis Gutierrez},
-  year={2025},
-  school={Universidad Autónoma de Ciudad Juárez},
-  type={Master's Thesis},
-  note={Available at: https://github.com/luisglm1/rl-factory-thesis}
-}
-```
-
----
 
 ## License
 
@@ -473,7 +455,6 @@ This project is licensed under the **MIT License** - see the LICENSE file for de
 
 - **Issues:** Please open a GitHub issue for bugs or questions
 - **Discussions:** Use GitHub Discussions for general questions
-- **Email:** al173926@alumnos.uacj.mx (for thesis-specific inquiries)
 
 ---
 
