@@ -32,8 +32,8 @@ The complete thesis document is available at **[thesis/Thesis_Final.pdf](thesis/
 ```
 rl-factory-thesis/
 ├── README.md                    # This file
-├── LICENSE                      # Open source license
-├── .gitignore                   # Git exclusions
+├── LICENSE                      
+├── .gitignore                   
 │
 ├── ros2_ws/                     # ROS 2 Workspace
 │   └── src/
