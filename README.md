@@ -108,15 +108,6 @@ python3 ros2_ws/src/factory_nav_rl/factory_nav_rl/evaluate.py \
 # Results will be printed to console
 ```
 
-**Expected Output:**
-```
-Episodes: 10
-Mean Reward: -185.3 ± 12.5
-Success Rate: 0%
-Collision Rate: 0%
-Timeout Rate: 100%
-Mean Episode Length: 500 steps
-```
 
 ---
 
