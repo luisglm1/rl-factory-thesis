@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="factory">
+    <!-- Physics system plugin -->
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics">
+      <engine><filename>gz-physics-dartsim-plugin</filename></engine>
+    </plugin>
+
+    <!-- Sensors system plugin (CRITICAL for camera and laser sensors) -->
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <!-- Scene broadcaster -->
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"></plugin>
+
+    <!-- User commands (for interaction) -->
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"></plugin>
+
+    <!-- Imu system (needed for diff drive) -->
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"></plugin>
+
+    <!-- Apply link wrench system (needed for actuators) -->
+    <plugin filename="gz-sim-apply-joint-force-system" name="gz::sim::systems::ApplyJointForce"></plugin>
+
+    <!-- Sun (inline, no Fuel dependency) -->
+    <light name="sun" type="directional">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+
+    <!-- Ground plane (inline) -->
+    <model name="ground">
+      <static>true</static>
+      <link name="base_link">
+        <collision name="base_col">
+          <geometry>
+            <plane><normal>0 0 1</normal><size>100 100</size></plane>
+          </geometry>
+        </collision>
+        <visual name="base_vis">
+          <geometry>
+            <plane><normal>0 0 1</normal><size>100 100</size></plane>
+          </geometry>
+          <material>
+            <ambient>0.7 0.7 0.7 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Two static walls (corrected tags) -->
+    <model name="wall1">
+      <static>true</static>
+      <pose>2 -3 1.25 0 0 0</pose>
+      <link name="l">
+        <collision name="c">
+          <geometry><box><size>6 0.1 2.5</size></box></geometry>
+        </collision>
+        <visual name="v">
+          <geometry><box><size>6 0.1 2.5</size></box></geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wall2">
+      <static>true</static>
+      <pose>2 3 1.25 0 0 0</pose>
+      <link name="l">
+        <collision name="c">
+          <geometry><box><size>6 0.1 2.5</size></box></geometry>
+        </collision>
+        <visual name="v">
+          <geometry><box><size>6 0.1 2.5</size></box></geometry>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Two box obstacles -->
+    <model name="box_1">
+      <static>true</static>
+      <pose>0.5  0.5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual    name="vis"><geometry><box><size>1 1 1</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="box_2">
+      <static>true</static>
+      <pose>1.6 -0.5 0.7 0 0 0</pose>
+      <link name="link">
+        <collision name="col"><geometry><box><size>1 1 1.4</size></box></geometry></collision>
+        <visual    name="vis"><geometry><box><size>1 1 1.4</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <!-- PiCar-X: resolved via GZ_SIM_RESOURCE_PATH -->
+    <include>
+      <uri>model://picarx</uri>
+      <pose>-1.0 0.0 0.02 0 0 0</pose>
+    </include>
+  </world>
+</sdf>
+

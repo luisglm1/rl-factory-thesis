@@ -1,0 +1,70 @@
+# ROS 2 Build Artifacts
+build/
+install/
+log/
+*.pyc
+__pycache__/
+*.egg-info/
+
+# Python
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+rl-venv/
+ENV/
+.venv
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# LaTeX Build Artifacts (if source added later)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Training Outputs (large files)
+tensorboard/
+checkpoints/
+*.ckpt
+training_*/
+
+# Gazebo and ROS
+.ros/
+.gazebo/
+.gz/
+
+# Temporary Files
+*.tmp
+*.bak
+*.backup
+.cache/
+
+# System Files
+.bash_history
+.bashrc
+.profile
+
+# Large Model Files (>100MB)
+# Users should download separately or train their own
+*.zip
+!models/ppo_factory_nav_final.zip
+
+# Credentials and Secrets
+*.env
+*.pem
+*.key
+credentials.json
+secrets.json

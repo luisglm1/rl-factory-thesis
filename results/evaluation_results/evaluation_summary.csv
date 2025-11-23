@@ -1,0 +1,2 @@
+n_episodes,mean_reward,std_reward,mean_length,std_length,success_rate,collision_rate,timeout_rate,out_of_bounds_rate,mean_dist_to_goal,mean_min_obstacle_dist,successes,collisions,timeouts,out_of_bounds
+10,207.77738661170005,62.86315142318144,723.5,422.3688553859056,30.0,0.0,70.0,0.0,2.7501454,0.8659983430382324,3,0,7,0

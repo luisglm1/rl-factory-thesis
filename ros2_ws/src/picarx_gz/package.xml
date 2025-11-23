@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>picarx_gz</name>
+  <version>0.0.1</version>
+  <description>Gazebo Harmonic world and launcher for PiCar-X</description>
+  <maintainer email="you@example.com">You</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>ros-gz-sim</exec_depend>
+  <exec_depend>ros-gz-bridge</exec_depend>
+  <exec_depend>picarx_description</exec_depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
