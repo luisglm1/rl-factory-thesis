@@ -21,7 +21,7 @@ This repository contains the complete implementation and results of my thesis on
 
 ## Thesis Document
 
-The complete thesis document is available at **[thesis/Thesis_RL_Final.pdf](thesis/Thesis_RL__Final.pdf)** (2.6MB).
+The complete thesis document is available at **[thesis/Thesis_RL_Final.pdf](thesis/Thesis_RL_Final.pdf)** .
 
 **Abstract:** This research investigates the application of deep reinforcement learning for autonomous navigation in industrial factory environments. Using the Proximal Policy Optimization (PPO) algorithm, I trained an agent to navigate using camera images, ultrasonic range data, and IR line sensors in simulation. The approach demonstrates the potential for learned navigation policies that can adapt to dynamic environments without explicit path planning.
 
